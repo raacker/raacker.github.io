@@ -110,6 +110,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/raacker"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/haven-kim/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/haven__kim"
@@ -120,6 +123,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/raacker"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/haven-kim/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/haven__kim"
@@ -128,6 +134,7 @@ footer:
 # Reading Files
 include:
   - .htaccess
+  - _posts
   - _pages
 exclude:
   - "*.sublime-project"
@@ -191,7 +198,11 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Canada/Pacific # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+breadcrumbs: true
+breadcrumb_home_label : "Home"
+breadcrumb_separator  : "/"
 
 
 # Plugins (previously gems:)
@@ -200,6 +211,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
@@ -208,6 +220,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 
 
@@ -228,17 +241,20 @@ tag_archive:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
+#jekyll-archives:
 #   enabled:
 #     - categories
 #     - tags
+#     - years
 #   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+#     category: categories
+#     tag: tags
+#     year: archive
 
+#   permalinks:
+#     category: /archives/categories/:name/
+#     tag: /archives/tags/:name/
+#     year: /archives/years/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

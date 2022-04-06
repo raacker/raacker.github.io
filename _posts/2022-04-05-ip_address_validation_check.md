@@ -4,7 +4,7 @@ last_modified_at: 2022-04-05T23:39:00-08:00
 categories:
     - C++
 tags:
-    - [C++]
+    - [C++, Snippets]
 excerpt: "A code snippet of how to validate IP address string in C++"
 ---
 

@@ -4,7 +4,7 @@ last_modified_at: 2022-04-05T23:47:00-08:00
 categories:
     - Python
 tags:
-    - [Python]
+    - [Python, Snippets]
 excerpt: "heic to jpg. iPhone images are heic formats. Please give me jpgs... "
 toc: true
 ---

@@ -4,7 +4,7 @@ last_modified_at: 2020-08-22T10:32:50-08:00
 categories:
     - C++
 tags:
-    - [C++]
+    - [C++, Snippets]
 toc: true
 ---
 

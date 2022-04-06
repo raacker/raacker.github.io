@@ -2,20 +2,20 @@
 title: "Pass key event to a specific process"
 last_modified_at: 2019-07-15T00:05:55-07:00
 categories:
-    - C++
+    - C#
 tags:
-    - c#
+    - [C#]
 ---
 
 Let's just go straightforward how to make "KeyEvent" to a specific process using C#.
 
 1) Import libraries
 
-{% highlight C# %}
+```C#
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-{% endhighlight %}
+```
 
 You need Windows.Forms to call SendKeys class method. If your program says it cannot find it, try "Add Reference" on your project properties.
 
@@ -23,14 +23,14 @@ You need Windows.Forms to call SendKeys class method. If your program says it ca
 
 If you want to force bring the process, define this dll function
 
-{% highlight C# %}
+```C#
 [DllImport("User32.dll")]
 static extern int SetForegroundWindow(IntPtr point);
-{% endhighlight %}
+```
 
 2) Generate Process and Send command
 
-{% highlight C# %}
+```C#
 Process p = Process.GetProcessesByName("Notepad").FirstOrDefault();
  if (p != null)
  {
@@ -39,7 +39,7 @@ Process p = Process.GetProcessesByName("Notepad").FirstOrDefault();
      SendKeys.SendWait("abcde");
      SendKeys.SendWait("^z");
 }
-{% endhighlight %}
+```
 
 First, find the process by name. ex) Notepad.
 

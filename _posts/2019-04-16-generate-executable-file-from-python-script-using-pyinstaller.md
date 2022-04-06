@@ -6,6 +6,7 @@ categories:
 tags:
     - [Python, Windows]
 toc: true
+excerpt: Generate executable file from python script. You also can enable UAC as default!
 ---
 
 If you have a python script but you don't want to make your users (or non technical customers) life such hard dealing with python compiler, you can just simply generate exe file for them. 

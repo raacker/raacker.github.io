@@ -5,6 +5,7 @@ categories:
     - C#
 tags:
     - [C#]
+excerpt: How to pass key event to a process in C#
 ---
 
 Let's just go straightforward how to make "KeyEvent" to a specific process using C#.

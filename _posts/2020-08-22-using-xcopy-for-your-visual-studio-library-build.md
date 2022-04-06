@@ -5,6 +5,7 @@ categories:
     - C++
 tags:
     - [C++, Visual Studio]
+excerpt: How can I automatically copy dll and lib files from a build?
 ---
 
 If you are building a C++ library, leveraging "build event" is very useful to organize your output directory. 

@@ -2,7 +2,7 @@
 title: "Multiple reduction using omp"
 last_modified_at: 2019-12-12T19:30:15+09:00
 categories:
-    - "C++ / C#"
+    - "C++ & C#"
 tags:
     - c++, omp, multithreading
 ---

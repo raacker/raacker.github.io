@@ -2,9 +2,9 @@
 title: "Pass key event to a specific process"
 last_modified_at: 2019-07-15T00:05:55-07:00
 categories:
-    - CPP
+    - C++
 tags:
-    - csharp
+    - c#
 ---
 
 Let's just go straightforward how to make "KeyEvent" to a specific process using C#.

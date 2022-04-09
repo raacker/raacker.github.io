@@ -38,13 +38,16 @@ Sometimes you might want to make sure the library is being built and build event
 This usually happens to me when I have separate libraries for testing and there is an another main program that pulls the library binaries out.
 But as you know well, build event only gets fired when the project is "actually being updated". 
 
-If you want to copy the libraries anytime, you can put 
+If you want to copy the libraries anytime, by disabling auto up-to-date check, you can put this line in .vcproj file under PropertyGroup Global.
 
 ```bash
-<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+<PropertyGroup Label="Globals">
+  ...
+  <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+</PropertyGroup>
 ```
 
-option under your .vcproj file to disable auto up-to-date check. Then you don't have to keep typing spacebar and deleting to copy your main application code.
+ Then you don't have to keep typing spacebar and deleting to copy your main application code.
 
 > A boolean value that applies to Visual Studio only. The Visual Studio build manager uses a process called FastUpToDateCheck to determine whether a project must be rebuilt to be up to date. This process is faster than using MSBuild to determine this. Setting the DisableFastUpToDateCheck property to true lets you bypass the Visual Studio build manager and force it to use MSBuild to determine whether the project is up to date.
 

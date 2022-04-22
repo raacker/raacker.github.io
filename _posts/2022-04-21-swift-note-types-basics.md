@@ -1,19 +1,19 @@
 ---
-title: "Swift Note - Types Part 1"
+title: "Swift Note : Types - Basics"
 last_modified_at: 2022-04-21T23:20:00-08:00
 categories:
     - iOS
 tags:
-    - [Swift, iOS, Study Note]
+    - [Swift, iOS, Study Note Series, Intermediate Level]
 excerpt: "Types are very basics of Swift but they are the most important concepts that you need make sure you deeply understand them"
 toc: true
 ---
 
 Types. If you have studied any programming languages before, the first thing you do after "Hello, World!" is declaring variables to store numbers.
 
-Types are very basics but they are the core fundamentals of programming languages and we even have lots of problems and bugs just because of types (look at Javascript and Typescript). And even on the [Swift's introductory document](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html), it says Swift is a "type-safe" language.
+Types are very basics. But that doesn't mean they are simples. They are the core fundamentals of programming languages and we even have lots of problems and bugs just because of types (look at Javascript and Typescript). And even on the [Swift's introductory document](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html), it says Swift is a "type-safe" language as one of the key features of the language. "Type" a big deal if you spend some time on thinking about it. 
 
-This note will take steps into Swift's types and all the details need to be covered for Swift Noobs like me but who have experiences in other languages.
+Swift Note series will take steps into Swift's language concept and the details need to be covered for Swift Noobs like me but who have experiences in other languages. Thus, I will assume you have a bit of Swift experience previously such as Structure, Protocol, Class, Inheritance, etc.
 
 ## 1. Primitive Types
 
@@ -49,7 +49,7 @@ let catString = String(catCharacters)
 
 ### Keep in mind
 
-- Default type of constant numeric symbols are Int and Double.
+- Default type of constant numeric symbols are **Int** and **Double**.
 
 ```swift
 let intValue = 10
@@ -73,7 +73,7 @@ print (Int.max)
 ```
 <br/>
 
-- For max and min value of Float and Double, need to import Darwin and use constant values
+- For max and min value of Float and Double, need to **import Darwin** and use constant values
 
 ```swift
 import Darwin
@@ -85,7 +85,7 @@ print (FLT_MAX)
 ```
 <br/>
 
-- use **typealias** to redefine type symbols for a better readability of the code. It's same as typedef in C++
+- use **typealias** to redefine type symbols for a better readability of the code. Similarily, **typedef** in C++.
 
 ```swift
 typealias ImageBitRate = UInt32
@@ -93,14 +93,14 @@ var imagePixel: ImageBitRate = myImage(h, w)
 ```
 <br/>
 
-- They are structures & Protocols! 
+- Primitives are Structures & Protocols! 
 
 >All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are **value types**, and are **implemented as structures behind the scenes**. [Swift Document](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html#ID88)
 <br/>
 
 ### Any
 
-Any is a special type in Swift. It's pretty much simlar as "auto" but yet different under the hood.
+Any is a special type in Swift. It's pretty much simlar as **auto** in C++ but yet different under the hood.
 
 Any refers to "any" instance of a class, structure or enumeration. It means literally "everything". If you mix multiple data type into Array, the type of array will be [Any]. But you cannot make swift to inference the type of the array though since mixed data type in a collection is not type-safe to operate lots of methods.
 
@@ -153,7 +153,7 @@ struct MyStruct {
 }
 
 let canIStoreStruct: AnyObject = MyStruct()
-// error: MyPlayground.playground:1:2: error: value of type 'MyStruct' expected to be instance of class or class-constrained type
+// error: value of type 'MyStruct' expected to be instance of class or class-constrained type
 // let canI: AnyObject = MyStruct()
 //                       ^~~~~~~~~~
 //                                  as AnyObject
@@ -260,7 +260,7 @@ func createWidget<T: CustomWidget>(of: T.Type) -> T {
 }
 
 // Compile Error!
-// error: MyPlayground.playground:4:1: error: constructing an object of class type 'T' with a metatype value must use a 'required' initializer
+// error: constructing an object of class type 'T' with a metatype value must use a 'required' initializer
 //    let widget = ofType.init()
 //                 ~~~~~~ ^
 ```
@@ -290,9 +290,9 @@ Now you can call createWidget().
 
 ```swift
 createWidget(of: CustomWidget.Type)
-//error: MyPlayground.playground:5:1: error: global function 'createWidget(of:)' requires that 'CustomWidget.Type' inherit from 'CustomWidget'
-//createWidget(of: CustomWidget.Type)
-// ^
+// error: global function 'createWidget(of:)' requires that 'CustomWidget.Type' inherit from 'CustomWidget'
+// createWidget(of: CustomWidget.Type)
+//  ^
 ```
 
 Oops, so many errors 😅 Let's see what is wrong with the function parameter type.
@@ -333,7 +333,7 @@ On the other hand, what you get from type(of:) function is a "dynamic type" or "
 let myNumberType: Any = 10
 
 print (myNumberType.Type)
-// error: MyPlayground.playground:57:14: error: value of type 'Any' has no member 'Type'
+// error: value of type 'Any' has no member 'Type'
 // print (myNum.Type)
 //        ~~~~~ ^~~~
 
@@ -434,6 +434,3 @@ Self keyword can be used as a type of “current type”. By using Self rather t
 Further Readings<br/>
 [What's .self, .Type and .Protocol? Understanding Swift Metatypes](https://swiftrocks.com/whats-type-and-self-swift-metatypes.html)
 [AnyClass, Meta Type and .self](https://en.swifter.tips/self-anyclass/)
-
-
-

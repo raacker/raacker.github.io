@@ -15,9 +15,7 @@ Types are very basics. But that doesn't mean they are simples. They are the core
 
 Swift Note series will take steps into Swift's language concept and the details need to be covered for Swift Noobs like me but who have experiences in other languages. Thus, I will assume you have a bit of Swift experience previously such as Structure, Protocol, Class, Inheritance, etc.
 
-## 1. Primitive Types
-
-So basics right?
+## 1. Data Types
 
 * Int
     - Decimal signed integer. Defined as **64 bits** in 64-bit Machines and **32 bits** in 32-bit Machines
@@ -45,6 +43,18 @@ So basics right?
 let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
 let catString = String(catCharacters)
 ```
+
+So basics right? We might want to call them "primitive types" as we do in other languages. But...
+
+Data types are Structures & Protocols under the hood! 
+
+>All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are **value types**, and are **implemented as structures behind the scenes**. [Swift Document](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html#ID88)
+
+Which means... it is not the same primitives as we can see from other languages. Even though we are using them as Primitive-like types and they behave just like primitives, they are structures and that's why we have extra attributes and instance methods.
+
+Further Readings: [Are Int, String etc. considered to be 'primitives' in Swift?](https://stackoverflow.com/questions/36822136/are-int-string-etc-considered-to-be-primitives-in-swift)
+
+<br/>
 
 
 ### Keep in mind
@@ -91,11 +101,6 @@ print (FLT_MAX)
 typealias ImageBitRate = UInt32
 var imagePixel: ImageBitRate = myImage(h, w)
 ```
-<br/>
-
-- Primitives are Structures & Protocols! 
-
->All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are **value types**, and are **implemented as structures behind the scenes**. [Swift Document](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html#ID88)
 <br/>
 
 ### Any

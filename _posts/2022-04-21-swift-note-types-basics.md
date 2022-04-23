@@ -15,6 +15,8 @@ Types are very basics. But that doesn't mean they are simples. They are the core
 
 Swift Note series will take steps into Swift's language concept and the details need to be covered for Swift Noobs like me but who have experiences in other languages. Thus, I will assume you have a bit of Swift experience previously such as Structure, Protocol, Class, Inheritance, etc.
 
+* This post is using Swift 5.6 version
+
 ## 1. Data Types
 
 * Int
@@ -103,7 +105,7 @@ var imagePixel: ImageBitRate = myImage(h, w)
 ```
 <br/>
 
-### Any
+## 2. Any
 
 Any is a special type in Swift. It's pretty much simlar as **auto** in C++ but yet different under the hood.
 
@@ -123,7 +125,7 @@ let valuesImplicit = [1, 2, "Fish"]
 ```
 <br/>
 
-### AnyObject
+## 3. AnyObject
 
 AnyObject is a **protocol** that all classes implicitly conform. [Swift Document](https://developer.apple.com/documentation/swift/anyobject)
 
@@ -185,9 +187,9 @@ Umm... it is a type of.. AnyObject.Type! [Swift Document](https://developer.appl
 What does this mean? we should take a look at "Metatype" first.
 <br/>
 
-### Metatype
+## 4. Metatype
 
-#### What is Metatype?
+### What is Metatype?
 
 Metatype is **a type** of a type. In the below code snippet, Widget is a class. Yes, you are correct. It is can be called as "type" as well. But let’s just use a deeper technical term here. [Swift Document](https://docs.swift.org/swift-book/ReferenceManual/Types.html#ID455)
 
@@ -195,18 +197,18 @@ When you have a class (blueprint) and assign a memory block in heap space, you c
 
 ```swift
 class CustomWidget {
-	static var instanceCount = 0
-	init () {
-		CustomWidget.instanceCount += 1
-	}
+    static var instanceCount = 0
+    init () {
+        CustomWidget.instanceCount += 1
+    }
 
-	func draw() {
-		print ("I am drawing!")
-	}
+    func draw() {
+        print ("I am drawing!")
+    }
 
-	class func currentCount() {
-	  print ("We created \(instanceCount) widgets")
-  }
+    class func currentCount() {
+        print ("We created \(instanceCount) widgets")
+    }
 }
 
 let newWidget: CustomWidget = CustomWidget()
@@ -234,10 +236,10 @@ print (newWidgetType)
 
 In detail, CustomWidget class's type is CustomWidget.Type, so called Metatype.
 
-- CustomWidget : Name of your class
+- CustomWidget : Name of your class & class itself
 - CustomWidget.Type : Type of your class 
 
-#### So... AnyClass is
+### So... AnyClass is
 
 Cool! Now we have all the backgrounds to understand "typealias AnyClass = AnyObject.Type".
 
@@ -272,22 +274,24 @@ func createWidget<T: CustomWidget>(of: T.Type) -> T {
 
 Just pass a type that inherits CustomWidget class. Then it will create an instance and append to myWidgets array.
 
-That code won't compile though because Subclass’s Type is a subset of Class’s Type. Which means our CustomWidget.Type is also a subset of AnyObject.Type but compiler cannot assure any children actually have “required” constructors or not. To fix the problem, you need to specify which initializer is a 100% necessary to be called and the most basic. [StackOverflow](https://stackoverflow.com/questions/32163124/why-must-constructing-an-object-of-class-type-someclass-with-a-metatype-value)
+That code won't compile though because Subclass’s Type is a subset of Class’s Type. Which means our CustomWidget.Type is also a subset of AnyObject.Type but compiler cannot assure any children actually have “required” constructors or not.
+
+To fix the problem, you need to specify which initializer is a 100% necessary to be called and the most basic. [StackOverflow](https://stackoverflow.com/questions/32163124/why-must-constructing-an-object-of-class-type-someclass-with-a-metatype-value)
 
 ```swift
 class CustomWidget {
-	static var instanceCount = 0
-	required init () {
-		CustomWidget.instanceCount += 1
-	}
+    static var instanceCount = 0
+    required init () {
+        CustomWidget.instanceCount += 1
+    }
 
-	func draw() {
-		print ("I am drawing!")
-	}
+    func draw() {
+        print ("I am drawing!")
+    }
 
-	class func currentCount() {
-	  print ("We created \(instanceCount) widgets")
-  }
+    class func currentCount() {
+        print ("We created \(instanceCount) widgets")
+    }
 }
 ```
 
@@ -319,9 +323,9 @@ createWidget(of: CustomWidget.self)
 ```
 <br/>
 
-#### Static Metatype, .self
+### Static Metatype, .self
 
-In Swift, .self is called **static metatype** or "compile time type of an instance". This code should look a lot comfortable now for you.
+In Swift, .self is called **static metatype** or "compile time type of an instance". This code should look a lot comfortable for you now.
 
 ```swift
 let myType: Int.Type = Int.self
@@ -330,7 +334,7 @@ let myType: Int.Type = Int.self
 We are storing Metatype value "self" in Int's Metatype constant "myType"
 
 
-#### Dynamic Metatype, type(of:)
+### Dynamic Metatype, type(of:)
 
 On the other hand, what you get from type(of:) function is a "dynamic type" or "runtime type" [Swift Document](https://developer.apple.com/documentation/swift/2885064-type)
 
@@ -339,7 +343,7 @@ let myNumberType: Any = 10
 
 print (myNumberType.Type)
 // error: value of type 'Any' has no member 'Type'
-// print (myNum.Type)
+// print (myNumberType.Type)
 //        ~~~~~ ^~~~
 
 print (type(of:myNumberType))
@@ -350,9 +354,12 @@ print (myNumberType.self)
 ```
 
 During the compilation, myNumberType is an “Any” type but due to type assignment and conversion, the runtime type is Int.
+
+But as we saw before, Any means literally "anything". It cannot specify any attributes or extra information of your type during compilation. That's why Any cannot have metatype, but AnyObject.
+
 <br/>
 
-#### Protocol's Metatype
+### Protocol's Metatype
 
 It's time to talk about existential metatype.
 
@@ -370,9 +377,9 @@ let metatype: WidgetProtocol.Type = WidgetProtocol.self
 
 Error message says everything! WidgetProtocol.self is correct usage but the problem is at “WidgetProtocol.Type”.
 
-“WidgetProtocol.Type” indicates *"I can store a metatype of which conforms WidgetProtocol”*. But at above snippet, we are trying to assign WidgetProtocol's metatype itself. That's why it is not a correct usage.
+“WidgetProtocol.Type” indicates *I can store a metatype of which conforms WidgetProtocol*. That is the difference in between Protocol's metatype and other Class or Data type's metatype. 
 
-Then how can we get the actual actual metatype of the protocol? We have .Protocol keyword here.
+Then how can we get the actual actual metatype of the protocol? Protocol has a special keyword for it, .Protocol.
 
 ```swift
 print (type(of:WidgetProtocol.self))
@@ -380,30 +387,33 @@ print (type(of:WidgetProtocol.self))
 
 let metatype: WidgetProtocol.Protocol = WidgetProtocol.self
 ```
+
+Now, metatype constant is storing a metatype of WidgetProtocol, not a metatype of class or structure that conforms WidgetProtocol.
+
 <br/>
 
-#### 3 Self
+### 3 Self
 
-Okay I think we have been saying self too many times in everywhere. Let's summarize what they are exactly.
+Okay I think we have been saying self too many times in everywhere. Let's put them in handy to see what exactly they are.
 
 1) self in instance (same as “this” in other languages)
 
 ```swift
 class TextWidget : Widget {
-	var name: String
-	init () {
-    self.name = "TextWidget"
-  }
-	
-  func printMyName() {
-		print (self.name)
-  }
+    var name: String
+    init () {
+        self.name = "TextWidget"
+    }
+
+    func printMyName() {
+        print (self.name)
+    }
 }
 ```
 You use self when initializing or accessing instance properties.
 <br/>
 
-2) self as static metatype [Apple Document](https://developer.apple.com/documentation/uikit/uitableview/1614888-register)
+2) self as static metatype [UITableView register()](https://developer.apple.com/documentation/uikit/uitableview/1614888-register)
 
 ```swift
 let tableView = UITableView()
@@ -411,26 +421,26 @@ tableView.register(CustomCellWidget.self, forReuseIdentifier: "CustomCell")
 ```
 If you’ve tried API fetching or board app samples, you have already had this code in your project.
 
-Yes, register() takes cellClass: AnyClass? which is “typealias AnyClass = AnyObject.Type”! it takes metatype as an argument.
+Yes, register() takes cellClass: AnyClass? which is “typealias AnyClass = AnyObject.Type”! it takes metatype of classes as an argument. And also, that means you cannot pass Structure or Enumeration's Metatype because it should be a child metatype of AnyObject.Type.
 <br/>
 
 3) Self as a Type of a current Type.
 
 ```swift
 extension Vector3 {
-	func normalized() -> Vector3 {
+    func normalized() -> Vector3 {
     return Vector3(self.data.x / self.length,
         self.data.y / self.length,
         self.data.z / self.length)
-  }
+    }
 }
 
 extension Vector3 {
-	func normalized() -> Self {
+    func normalized() -> Self {
     return Self(self.data.x / self.length,
         self.data.y / self.length,
         self.data.z / self.length)
-  }
+    }
 }
 ```
 Self keyword can be used as a type of “current type”. By using Self rather than actual Type name, you can define type-independent protocols.

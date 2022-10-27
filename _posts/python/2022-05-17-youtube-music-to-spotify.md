@@ -35,7 +35,7 @@ Sorry, long story. Let's get to the point.
 
 I wrote some scripts using ytmusicapi and spotipy libraries to import & export playlist in CSV format with just a song name and an artist name. Actually that's pretty much all you really need to import & export into other platforms.
 
-[playlist_api](https://github.com/raacker/playlist_api)
+[playlist_trader](https://github.com/raacker/playlist_trader)
 
 The scripts are very straightforward, read the README.md to setup and just run the scripts with your playlist ids.
 

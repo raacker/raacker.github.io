@@ -4,7 +4,7 @@ last_modified_at: 2020-08-22T12:32:50-08:00
 categories:
     - C++
 tags:
-    - [C++, Visual Studio]
+    - [C++, Windows, Visual Studio]
 ---
 
 This time, let's setup a new project to run a batch file which will pull and update your git repo automatically with only one click. I will use ssh-agent and public key to access my private git repositories. If you are using github to do the same, please refer to github access guide.

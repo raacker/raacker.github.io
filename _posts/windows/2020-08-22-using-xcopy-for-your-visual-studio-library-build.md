@@ -4,7 +4,7 @@ last_modified_at: 2020-08-22T12:10:50-08:00
 categories:
     - C++
 tags:
-    - [C++, Visual Studio]
+    - [C++, Windows, Visual Studio]
 excerpt: How can I automatically copy dll and lib files from a build?
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Export playlists from Youtube Music to Spotify or the other way"
+title: "Export playlists from Youtube Music to Spotify, vice versa"
 last_modified_at: 2022-05-17T22:21:00-08:00
 categories:
     - Toy

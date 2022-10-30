@@ -31,12 +31,9 @@ I personally think the best way of studying design pattern or refactoring is
     > Best way of learning? it is teaching someone else.
 
 <br/>
-Oh, and about the sample codes I provide, I will try to demonstrate the exact pattern itself but I find some of them are very not practical to use but only draw an exact picture of the Pattern. To be honest, I hate them. I literally forgot most of those code examples in my head since they remain abstract. 
-
-Design Patterns are still practical theories but always co-exist all together even in a simple architecture. They often look very similar in the structure as well as the problem they are trying to solve. But they will have *distinguishable intent* for each.
+And about the sample codes I provide. I find some of online samples are written only for diagram purpose, with absence of practical usage. I hate them because I literally forgot most of those code examples since they remain too abstract. 
 
 I will try hard to cover the practical usage (or closer aspect) as much as possible and will mention on each example if they don't align perfectly to the pattern's specification.
-
 
 <br/>
 Welcome aboard to my Teach Me In One Sentence - Design Pattern journey!

@@ -1,6 +1,6 @@
 ---
 title: "TMIOS Design Pattern, 00 - Introduction"
-last_modified_at: 2022-10-29T12:20:00-08:00
+last_modified_at: 2022-10-26T12:20:00-08:00
 categories:
     - designpattern
 tags:

@@ -102,4 +102,4 @@ When the state gets changed, **component will be re-rendered** but *reuse the ex
 
 In more formal meaning, this is the React's *Render-Commit* mechanism built on top of Virtual DOM system.
 
-Will cover about the Virtual DOM [in the next post]().
+Will cover about the Virtual DOM [in the next post](https://raacker.github.io/react/react-note-virtual-dom/).

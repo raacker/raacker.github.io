@@ -15,7 +15,7 @@ DOM(Document Object Model) is a Tree-Structured object that lets JavaScript to u
 
 In other words, DOM is more like a bridge in between HTML/CSS and JavaScript.
 
-![](./images/DOM_Bridge.svg)
+![DOM_Bridge](/_posts/react/react-note-02-virtual-dom/images/DOM_Bridge.svg)
 
 ## Then what is Virtual DOM?
 
@@ -33,7 +33,7 @@ After all the calcuation on the Offline DOM Tree(so called reconciliation), it b
 The same goal can be achieved by DOM fragment as well but the whole reason of using Virtual DOM is to make that DOM fragment calculation automated and abstracted. And also it will automatically track down all the nodes in an efficient way that you even don't have to care about anything.
 [Reference](https://saiki.hashnode.dev/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom)
 
-[![Virtual DOM in Graph Action](./images/virtualdom_graph.jpg)](https://dev.to/swarnaliroy94/introduction-to-react-real-dom-virtual-dom-363)
+[![Virtual DOM in Graph Action](/_posts/react/react-note-02-virtual-dom/images/virtualdom_graph.jpg)](https://dev.to/swarnaliroy94/introduction-to-react-real-dom-virtual-dom-363)
 
 ## The steps to update DOM with Virtual DOM
 

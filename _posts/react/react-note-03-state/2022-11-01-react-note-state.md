@@ -9,8 +9,6 @@ excerpt: "State management made React very powerful. Even with the hook system, 
 toc: true
 ---
 
-# React Note - State
-
 ## State?
 
 State & [Props](https://raacker.github.io/react/react-note-props/) are the core concept of the React framework which empower the modularity and efficiency of components.

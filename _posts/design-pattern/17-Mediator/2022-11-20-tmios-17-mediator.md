@@ -9,8 +9,6 @@ excerpt: "Teach me in one sentence, Design Pattern series - Mediator"
 toc: true
 ---
 
-# Mediator
-
 > GoF Numbering : 17<br/>
 > Category : Behavioral Pattern<br/>
 > Readings : [Wikipedia](https://en.wikipedia.org/wiki/Mediator_pattern),

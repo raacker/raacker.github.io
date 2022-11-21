@@ -9,8 +9,6 @@ excerpt: "Teach me in one sentence, Design Pattern series - Iterator"
 toc: true
 ---
 
-# Iterator
-
 > GoF Numbering : 16<br/>
 > Category : Behavioral Pattern<br/>
 > Readings : [Wikipedia](https://en.wikipedia.org/wiki/Iterator_pattern), 

@@ -9,8 +9,6 @@ excerpt: "Props is an essential of reusability"
 toc: true
 ---
 
-# React Note - Props
-
 ## What is props
 
 Props? Properties. 

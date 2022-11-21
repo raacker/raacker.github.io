@@ -9,8 +9,6 @@ excerpt: "Let React knows the component doesn't need to be updated that frequent
 toc: true
 ---
 
-# React Note - Effect
-
 ## Rerendering everytime we change the state
 
 ```js

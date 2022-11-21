@@ -9,8 +9,6 @@ excerpt: "Teach me in one sentence, Design Pattern series - Command"
 toc: true
 ---
 
-# Command
-
 > GoF Numbering : 14<br/>
 > Category : Behavioral Pattern<br/>
 > Readings : [Wikipedia](https://en.wikipedia.org/wiki/Command_pattern), 

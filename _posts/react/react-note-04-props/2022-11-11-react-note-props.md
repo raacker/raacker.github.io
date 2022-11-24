@@ -27,7 +27,7 @@ const CommonButton = () => {
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 7,
+            borderRadius: 7
         }}>
             Button
         </button>
@@ -61,7 +61,7 @@ const CommonButton = (props) => {
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 7,
+            borderRadius: 7
         }} onClick={ props.onPressed }>
             { props.label }
         </button>
@@ -175,7 +175,7 @@ const CommonButton = (props) => {
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 7,
+            borderRadius: 7
         }} onClick={ props.onPressed }>
             { props.label }
         </button>
@@ -194,7 +194,7 @@ const CommonButton = ({ onPressed=null, label="placeholder" }) => {
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 7,
+            borderRadius: 7
         }} onClick={ onPressed }>
             { label }
         </button>

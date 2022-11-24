@@ -62,6 +62,8 @@ Meanwhile, other patterns are *Uni-directional* relationship which they send a m
 
 ## Code Example
 
+[C++ Version](https://github.com/raacker/raacker.github.io/tree/master/_posts/design-pattern/17-Mediator/codes/cpp)
+
 I realized I was doing too much "external" works rather than focusing on the Mediator Object 😅. Thus I will stop at the current state.
 
 Some of the code should be refactored and for sure currently they remain undone.

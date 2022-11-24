@@ -84,7 +84,7 @@ But
 
 Even though I put nevah's photo editor story, I'd rather write a *precisely describing example*, File Import and Export 😅
 
-[C++ Version](https://github.com/raacker/raacker.github.io/tree/master/_posts/design-pattern/14-Command/codes/c%2B%2B)
+[C++ Version](https://github.com/raacker/raacker.github.io/tree/master/_posts/design-pattern/14-Command/codes/cpp)
 
 Jeez, it wasn't my intention but the scale got too big just for "AppendCommand" 😂
 

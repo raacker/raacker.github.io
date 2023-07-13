@@ -97,17 +97,14 @@ You don't have to read most of the Document code but just see how the CommandMan
 * The example didn't demonstrate **Executed Routed Event System** but it could be simply described as ...
 
     ```C++
-    ProjectCommandManager::ProjectCommandManager()
-    {
-        mCommands.clear();
-    }
     ProjectCommandManager::~ProjectCommandManager()
     {
-        mCommands.clear();
+        Clear();
     }
 
     void ProjectCommandManager::NewCommand(Command* command)
     {
+        if (command == NULL) return;
         mCommands.push_back(command);
     }
 
@@ -115,7 +112,17 @@ You don't have to read most of the Document code but just see how the CommandMan
     {
         for (Command* command : mCommands)
         {
+            // Let it crash. NULL command shouldn't be in the list
             command->Execute();
+            delete command;
+        }
+        mCommands.clear();
+    }
+    
+    void ProjectCommandManager::Clear()
+    {
+        for (Command* command : mCommands)
+        {
             delete command;
         }
         mCommands.clear();

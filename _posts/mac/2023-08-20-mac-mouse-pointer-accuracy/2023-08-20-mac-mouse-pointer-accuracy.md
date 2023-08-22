@@ -25,7 +25,7 @@ toc: true
 
 MX Vertical처럼 딱 손을 세우고 쓰는건 아니지만 그래도 적당한 각도로 휘어진 형태는 나름 편하다고 느낄 정도였습니다.
 
-![이제 잘 적응한 MX Master 3S...](/_posts/mac/2023-08-20-mac-mouse-pointer-accuracy/images/mx_master_3s.png)
+![이제 잘 적응한 MX Master 3S...](/_posts/mac/2023-08-20-mac-mouse-pointer-accuracy/images/mx_master_3s.jpg)
 이제 잘 적응한 MX Master 3S...
 
 ## 마우스 포인터가 자꾸 어긋난다?

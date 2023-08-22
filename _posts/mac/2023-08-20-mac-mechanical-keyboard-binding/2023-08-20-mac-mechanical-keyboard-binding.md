@@ -84,18 +84,22 @@ toc: true
 
 Right Option키는 일반적으로 윈도우 키보드에서 스페이스바 오른쪽에 위치한 Alt키 입니다.
 
-![Input source to f18](/_posts/mac/2023-08-20-mac-mechanical-keyboard-binding/images/change_input_source.png)
-
-위 처럼 Input Sources에서 `Select the previous input source`를 꺼주고 `Select next source in input menu`를 키보드에 존재하지 않는 키로 매핑해줍니다. 여기서는 F19로 해주겠습니다.
-
 ```bash
 {
     "HIDKeyboardModifierMappingSrc": 0x7000000E6,
-    "HIDKeyboardModifierMappingDst": 0x70000006E
+    "HIDKeyboardModifierMappingDst": 0x70000006D
 }
 ```
 
-맥북 키보드에서는 스페이스바 오른쪽에 Command키가 위치하고 있으니 노트북에서도 비슷한 위치에 놓고 싶으시다면 Right Command 역시 F19에 매핑해도 괜찮습니다. 저는 Right Option키만 사용하기로 했습니다.
+맥북 키보드에서는 스페이스바 오른쪽에 Command키가 위치하고 있으니 노트북에서도 비슷한 위치에 놓고 싶으시다면 Right Command 역시 F18에 매핑해도 괜찮습니다. 저는 Right Option키만 사용하기로 했습니다.
+
+위의 .plist 파일을 설정한 뒤, 저장하고 재부팅을 하면 해당 키는 설정해놓은 입력 키 이벤트로 변경이 됩니다. 어느 키보드를 사용하더라도 동일하게 리매핑이 됩니다. 이제 `Settings -> Keyboards -> Keyboard Shortcuts... -> Input Sources`로 들어가줍니다.
+
+![Input source to f18](/_posts/mac/2023-08-20-mac-mechanical-keyboard-binding/images/change_input_source.png)
+
+위 처럼 Input Sources에서 `Select the previous input source`를 꺼주고 `Select next source in input menu`의 키 값을 더블 클릭한 뒤, 저희가 방금 바꾼 키를 누르면 F18로 입력됩니다.
+
+한영키를 눌러보시면 이젠 Ctrl + Space나 Tab키 같은 한영 변환을 안해도 됩니다.
 
 ## 3. Ctrl, Alt 키바인딩 바꾸기
 

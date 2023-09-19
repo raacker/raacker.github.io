@@ -11,7 +11,7 @@ toc: true
 
 ## What is props
 
-Props? Properties. 
+Props? Properties.
 
 Yes, it is nothing more than that. But it has all mighty power underneath.
 
@@ -43,9 +43,9 @@ const App = () => {
 };
 ```
 
-Yes, very simple one. But I'm sure you already realized this is unusable. 
+Yes, very simple one. But I'm sure you already realized this is unusable.
 
-How are you going to define onClick event? How are you going to change the text inside of button tag? fontSize? 
+How are you going to define onClick event? How are you going to change the text inside of button tag? fontSize?
 
 We just matched the style of button but it is too static. Very opposite from what we are expecting to engineer.
 
@@ -133,7 +133,6 @@ Include [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) a
 
     We provide a codemod script to automate the conversion.
 
-
 ```js
 import PropTypes from 'prop-types';
 
@@ -143,7 +142,7 @@ CommonButton.propTypes = {
 }
 ```
 
-Feels like a TypeScript right? 
+Feels like a TypeScript right?
 
 By defining types on propTypes, Component will ensure that you are passing expected type of value and also you can mark it <code>isRequired</code> to make sure the value exists.
 

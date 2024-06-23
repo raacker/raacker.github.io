@@ -40,16 +40,10 @@ toc: true
 
 이 툴에 세팅을 적용해주면 키보드 매핑 자체를 OS 레벨에서 적용해주는 것이구요.
 
-이 세팅을 부팅시마다 적용시켜 주기위해
+이 세팅을 부팅시마다 적용시켜 주기위해 `/Library/LaunchAgents` 폴더에 plist 파일을 만들어 줄 것입니다. 그리고 안에 기본적인 내용을 채워넣겠습니다.
 
 ```bash
-/Library/LaunchAgents
-~/Library/LaunchAgents
-```
-
-둘 다 잘 동작하니 아무 폴더 안에다가 세팅을 만들어서 넣어줄 것입니다.
-
-```xml
+sudo tee /Library/LaunchAgents/com.local.KeyRemapping.plist > /dev/null << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -74,15 +68,16 @@ toc: true
     <true/>
 </dict>
 </plist>
+EOF
 ```
 
 이런식으로 .plist 확장자를 가지는 XML 파일로 세팅을 만들어주면 맥이 부팅하는 과정에서 이를 읽고 적용하는 방식입니다.
 
-여기서 가장 쉽게 매핑 값을 만들 수 있는 방법은 [hidutil key remapping generator for MacOS](https://hidutil-generator.netlify.app/)입니다. 어느키가 존재하는지 쉽게 보는 방법은 위의 hidutil document 페이지에서 키들을 찾아보는 방법이고 아니라면 웹사이트가 제공하는 콤보박스를 사용해서 매핑을 선택하면 됩니다.
-
 ## 2. 한영키 만들기
 
-Right Option키는 일반적으로 윈도우 키보드에서 스페이스바 오른쪽에 위치한 Alt키 입니다.
+아제 어떤 키를 바꿀지 확인하기 위해 [Keyboard Test](https://keyboard-test.space/kor/) 사이트에서 키보드를 누르면서 키를 확인합니다. 저처럼 오른쪽 Alt키를 사용하신다면 Alt가 표시될거에요.
+
+그리고 이 키를 [hidutil key remapping generator for MacOS](https://hidutil-generator.netlify.app/)에서 찾아 매핑값을 얻습니다. 스페이스바 오른쪽에 위치한 Alt키는 보통 right_option에 해당합니다(0x7000000E6).
 
 ```bash
 {
@@ -93,7 +88,7 @@ Right Option키는 일반적으로 윈도우 키보드에서 스페이스바 오
 
 맥북 키보드에서는 스페이스바 오른쪽에 Command키가 위치하고 있으니 노트북에서도 비슷한 위치에 놓고 싶으시다면 Right Command 역시 F18에 매핑해도 괜찮습니다. 저는 Right Option키만 사용하기로 했습니다.
 
-위의 .plist 파일을 설정한 뒤, 저장하고 재부팅을 하면 해당 키는 설정해놓은 입력 키 이벤트로 변경이 됩니다. 어느 키보드를 사용하더라도 동일하게 리매핑이 됩니다. 이제 `Settings -> Keyboards -> Keyboard Shortcuts... -> Input Sources`로 들어가줍니다.
+위의 .plist 파일에서 매핑값을 설정한 뒤, 저장하고 **재부팅**을 하면 해당 키는 설정해놓은 입력 키 이벤트로 변경이 됩니다. 어느 키보드를 사용하더라도 동일하게 리매핑이 됩니다. 이제 `Settings -> Keyboards -> Keyboard Shortcuts... -> Input Sources`로 들어가줍니다.
 
 ![Input source to f18](/_posts/mac/2023-08-20-mac-mechanical-keyboard-binding/images/change_input_source.png)
 
